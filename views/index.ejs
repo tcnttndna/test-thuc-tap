@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>test thuc tap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="/infoCompany.js"></script>
+	<script src="/mainScript.js"></script>
+	<script src="/angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <div class="container" ng-app="myApp" ng-controller="namesCtrl">
+    	<div class="headtb">
+    		<div class="row">
+    			<div class="col-md-8">
+    				<p id="kihieu"> S&A/ASX</p>
+    			</div>
+    			<div class="col-md-2" id="gainer" ng-click="ng_reverse()">
+    				<p class="top">TOP GAINERS</p>
+    				<div class="hr" ng-style="colorHr1" id="hr1"></div>
+    			</div>
+    			<div class="col-md-2" id="lose" ng-click="ng_sort()">
+    				<p class="top">TOP LOSE</p>
+    				<div class="hr" ng-style="colorHr2" id="hr2"></div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="tableinfo">
+    		<table class="table">
+    			<thead>
+    				<tr>
+    					<th class="titleCol  ct" width="6%">Code</th>
+    					<th class="titleCol " width="34%">Company</th>
+    					<th class="titleCol  ct" width="10%">Price</th>
+    					<th class="titleCol  ct" width="20%">Value</th>
+    					<th class="titleCol  ct" width="15%">Change</th>
+    					<th class="titleCol  ct" width="15%">%Change</th>
+    				</tr>
+    			</thead>
+    			<tbody id="bodyTable">
+					<tr ng-repeat="x in names | orderBy:filter | limitTo: limit">
+						<td class="ct" id="code_vl">{{x.code}}</td>
+						<td class="titleCol">{{x.company}}</td>
+						<td class="ct">{{x.price}}</td>
+						<td class="ct">{{x.giatri | number: 0}}</td>
+						<td class="ct" ng-style="setStyle(x.pricechange)">{{x.price * x.pricechange | number:2}}</td>
+						<td class="ct" ng-style="setStyle(x.pricechange)">{{x.pricechange * 100 + "%"}}</td>
+					  </tr>
+    			</tbody>
+    		</table>
+    	</div>
+    </div>
+</body>
+</html>

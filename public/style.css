@@ -1,0 +1,37 @@
+.headtb{
+    background: #00C1DB;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+#kihieu{
+    margin-left: 25px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-family: bold;
+    font-size: 24px;
+}
+.top{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+
+}
+.hr{
+    width: 100%;
+    height: 2px;
+    background: #ED1111;
+}
+.ct{
+    text-align: center;
+}
+.tableinfo{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#code_vl{
+    color: #0A70D7;
+}
+.titleCol{
+    color: #b6b6b6;
+}
